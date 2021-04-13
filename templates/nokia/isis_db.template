@@ -1,0 +1,22 @@
+Value Required,Filldown Area (\S+)
+Value Required,Filldown PackAttribute (\w+)
+Value Required,Filldown RID ((\d+\.){3}\d+)
+Value Required LocalAddress ((\d+\.){3}\d+)
+Value Metric (\d+)
+Value Filldown Hostname (\S+)
+Value Filldown NbrHostname (\S+)
+Value Required NbrAddress ((\d+\.){3}\d+)
+
+Start
+  ^Displaying\sLevel\s1\sdatabase -> TLV
+  ^Displaying\sLevel\s2\sdatabase -> TLV
+
+TLV
+  ^Attributes:\s${PackAttribute}
+  ^\s+Area\sAddress\s:\s\S+\s${Area}
+  ^\s+IS-Hostname(\s+|\s):\s${Hostname}
+  ^\s+Router\sID(\s+|\s):\s${RID}
+  ^\s+Nbr(\s+|\s):\s${NbrHostname}..\d+
+  ^\s+Default\sMetric\s+:\s${Metric}
+  ^\s+IF\sAddr\s+:\s${LocalAddress}
+  ^\s+Nbr\sIP\s+:\s${NbrAddress} -> Continue.Record

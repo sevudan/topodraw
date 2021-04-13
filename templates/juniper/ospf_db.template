@@ -1,0 +1,12 @@
+Value Required,Filldown Area ((\d+\.){3}\d+)
+Value Required,Filldown LSA (\S+)
+Value Required,Filldown RID ((\d+\.){3}\d+)
+Value Type (\S+)
+Value Nbr ((\d+\.){3}\d+)
+Value Metric (\d+)
+
+Start
+  ^(\w+|\s+\w+)\sdatabase,\sArea\s${Area}
+  ^${LSA}\s+(\*)?(\d+(\.\d+){3})\s+${RID}.*
+  ^\s+Type:\s+${Type},\s+Node\s+ID:\s+${Nbr}
+  ^\s+Metric:\s+${Metric} -> Continue.Record

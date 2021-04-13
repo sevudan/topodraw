@@ -1,0 +1,15 @@
+Value Required,Filldown Area ((\d+\.){3}\d+)
+Value Required,Filldown LSA (\S+)
+Value Required,Filldown RID ((\d+\.){3}\d+)
+Value Type (\S+)
+Value Address ((\d+\.){3}\d+)
+Value Metric (\d+)
+
+Start
+  ^\S+\sLSA\sfor\sArea.* -> Continue.Record
+  ^Area\sId\s+:\s${Area}.+Adv\sRouter\sId\s+:\s${RID}
+  ^LSA\sType\s+:\s${LSA}
+  ^Link\sType\s\(\d\)\s+:\s${Type}
+  ^Network\s\(\d\)\s+:\s${Address}
+  ^DR\sRtr\sId\s\(\d\)\s+:\s${Address}
+  ^No\sof\sTOS\s.+Metric-.\s.+\s+:\s${Metric} -> Continue.Record

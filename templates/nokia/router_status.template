@@ -1,0 +1,5 @@
+Value Protocol (\w+-([0-9]|\w+)\s\s|^\w+\s\s)
+Value Status (\w+)
+
+Start
+  ^${Protocol}\s+${Status} -> Record

@@ -1,0 +1,14 @@
+Value Required,Filldown Area ((\d+\.){3}\d+)
+Value Required,Filldown LSA (\S+)
+Value Required,Filldown RID ((\d+\.){3}\d+)
+Value Type (\S+)
+Value Nbr ((\d+\.){3}\d+)
+Value Metric (\d+)
+
+Start
+  ^\s+Area:\s${Area}
+  ^\s+Type\s+:\s${LSA}
+  ^\s+Adv\srtr\s+:\s${RID}
+  ^\s+.\sLink\sID:\s${Nbr}
+  ^\s+Link\sType:\s${Type}
+  ^\s+Metric\s:\s(\S+) -> Continue.Record

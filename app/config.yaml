@@ -1,0 +1,4 @@
+hostname: 10.255.0.1
+igp: isis
+password: admin123
+username: admin

@@ -1,0 +1,15 @@
+Value HOSTNAME (\S+)
+Value OSTYPE (\S+)
+Value OSVERSION (\S+)
+Value MODEL (\S+\s\S+)
+Value UPTIME (\S+\s\w+)
+
+Start
+  ^\S+display\sversion -> Info
+
+Info
+  ^\<${HOSTNAME}\>
+  ^${OSTYPE}\s+.*software.*Version\s${OSVERSION}
+  ^${MODEL}\suptime\sis\s${UPTIME}
+
+

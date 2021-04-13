@@ -1,0 +1,527 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import logging
+import sys
+
+import yaml
+
+from Commands import *
+from builder.BuildConfig import BuildConfig
+from builder.Parser import Parser, Router, Node
+from connection.HostConnect import Connect
+
+
+#logging.basicConfig(level=logging.DEBUG)
+
+class Run:
+
+    def node_vendor(self, connection):
+        start_cmd = ".\n.\n"
+        output = connection.send_cmd_shell(start_cmd)
+        parser = Parser()
+        return parser.get_vendor(output)
+
+    def get_router_info(self, connect, topology, exclude=None, **access) -> list:
+        routers = []
+        if type(topology[0]) is tuple:
+            for raw in topology:
+                for router in raw:
+                    routers.append(router["rid"])
+            #If topology from isis, check dict len.
+            """
+        for router in topology:
+            if router.__len__() > 5:
+                routers.append(router["nbr_rid"])
+                routers.append(router["rid"])
+            else:
+                routers.append(router["rid"])"""
+        routers = list(set(routers))
+        if exclude.__len__() > 0:
+            routers = list(set(routers) ^ set(exclude))
+        nodes = []
+        for rid in routers:
+            access["host"] = rid
+            try:
+                connection = connect.connect_to_host(**access, invoke_shell=True)
+            except Exception as err:
+                logging.error(err)
+                continue
+            vendor = self.node_vendor(connection)
+            cmd = ""
+            if vendor == "Juniper":
+                cmd = Juniper.get_command()
+            elif vendor == "Nokia":
+                cmd = Nokia.get_command()
+            output = connection.send_cmd_shell(cmd)
+            connection.close()
+            node = Node(vendor, rid, output)
+            nodes.append(node)
+        return nodes
+
+    def get_router(self, host, connect, **access):
+        connection = connect
+        vendor = ""
+        cmd = ""
+        try:
+            connection = connect.connect_to_host(**access, invoke_shell=True)
+            vendor = self.node_vendor(connection)
+            if vendor == "Juniper":
+                cmd = Juniper.get_command()
+            elif vendor == "Nokia":
+                cmd = Nokia.get_command()
+        except Exception as err:
+            print(err)
+        finally:
+            connection.close()
+        output = connection.send_cmd_shell(cmd)
+        return Router(vendor, host, output)
+
+    def start(self):
+        CONFIG_FILE = 'config.yaml'
+        with open(CONFIG_FILE, 'r') as file:
+            config = yaml.load(file, Loader=yaml.FullLoader)
+
+        connect = Connect()
+        host = "10.255.0.7"
+        user = config['user']
+        password = "admin123"
+        access = {"host": host, "user": user, "password": password}
+        protocol = "isis"
+        abrs = []
+        igp_router = []
+        #Connect to first router and get igp database and ABRs.
+        try:
+            router = self.get_router(self, connect, **access)
+        except Exception as err:
+            print(str(err) + "First router error."
+                             "Script aborted...")
+            sys.exit(0)
+        #Check igp adjansensy.
+        if router.igp_adjacency(protocol):
+            abrs.extend(router.abr_nodes())
+            igp_router.append(router)
+        else:
+            raise Exception("IGP Protocol not running.\nScript aborted...")
+        if abrs.__len__() > 0:
+            for rid in abrs:
+                access["host"] = rid
+                try:
+                    abr = self.get_router(self, connect, **access)
+                except Exception:
+                    continue
+                igp_router.append(abr)
+        topology = []
+        for router in igp_router[1:]:
+            topology.extend(router.isis_topology())
+        abrs.append(host)
+        other_nodes = self.get_router(self, connect, **access)
+        igp_router.extend(other_nodes)
+
+        info = {}
+        for router in igp_router[1:]:
+            info[router.rid] = router.all_host_info()
+        build = BuildConfig()
+        build.build_topology_data(protocol, topology, info)
+
+
+if __name__ == '__main__':
+    try:
+        run = Run()
+        run.start()
+    except KeyboardInterrupt:
+        sys.stdout.write('You pressed Ctrl+C!'
+                            'Script aborted...')
+        sys.exit(0)
+
+
+
+"""node_info = { '10.255.0.2': {'vendor': 'Nokia', 'hostname': 'r02\r', 'os_version': 'B-13.0.R1\r'},
+'10.255.0.7': {'vendor': 'Juniper', 'hostname': 'vMX-1\r', 'os_version': '14.1R1.10\r'},
+'10.255.0.1': {'vendor': 'Nokia', 'hostname': 'r01\r', 'os_version': 'B-13.0.R1\r'},
+'10.255.0.3': {'vendor': 'Nokia', 'hostname': 'r03\r', 'os_version': 'B-13.0.R1\r'},
+'10.255.0.5': {'vendor': 'Nokia', 'hostname': 'dr05\r', 'os_version': 'B-13.0.R1\r'}}
+
+
+
+topology = [({'area': '49.0001', 'level': 'L1', 'rid': '10.255.0.7', 'local_ip': '10.0.21.2', 'src_metric': '10', 'hostname': 'vMX-1'}, {'hostname': 'r02', 'rid': '10.255.0.2', 'tgt_ip': '10.0.21.1', 'tgt_metric': '10'}),
+({'area': '49.0001', 'level': 'L1L2', 'rid': '10.255.0.2', 'local_ip': '10.0.24.2', 'src_metric': '10', 'hostname': 'r02'}, {'hostname': 'dr04', 'rid': '10.255.4.4', 'tgt_ip': '10.0.24.1', 'tgt_metric': '10'}),
+({'area': '49.0001', 'level': 'L1', 'rid': '10.255.0.5', 'local_ip': '10.0.45.2', 'src_metric': '10', 'hostname': 'dr05'}, {'hostname': 'dr04', 'rid': '10.255.4.4', 'tgt_ip': '10.0.45.1', 'tgt_metric': '10'}),
+({'area': '49.0001', 'level': 'L1L2', 'rid': '10.255.0.1', 'local_ip': '10.0.12.1', 'src_metric': '10', 'hostname': 'r01'}, {'hostname': 'r02', 'rid': '10.255.0.2', 'tgt_ip': '10.0.12.2', 'tgt_metric': '10'}),
+({'area': '49.0001', 'level': 'L1L2', 'rid': '10.255.0.1', 'local_ip': '10.0.13.1', 'src_metric': '10', 'hostname': 'r01'}, {'hostname': 'r03', 'rid': '10.255.0.3', 'tgt_ip': '10.0.13.2', 'tgt_metric': '10'}),
+({'area': '49.0001', 'level': 'L1L2', 'rid': '10.255.0.2', 'local_ip': '10.0.23.1', 'src_metric': '10', 'hostname': 'r02'}, {'hostname': 'r03', 'rid': '10.255.0.3', 'tgt_ip': '10.0.23.2', 'tgt_metric': '10'})]
+
+
+
+#b = BuildConfig()
+#b.build_topology_data("isis", topology, node_info)
+"""
+
+text = """
+OSPF database, Area 0.0.0.0
+ Type       ID               Adv Rtr           Seq      Age  Opt  Cksum  Len
+Router   10.255.0.1       10.255.0.1       0x80000008   124  0x2  0xe003  60
+  bits 0x0, link count 3
+  id 10.0.13.2, data 10.0.13.1, Type Transit (2)
+    Topology count: 0, Default metric: 100
+  id 10.0.12.2, data 10.0.12.1, Type Transit (2)
+    Topology count: 0, Default metric: 100
+  id 10.255.0.1, data 255.255.255.255, Type Stub (3)
+    Topology count: 0, Default metric: 0
+  Topology default (ID 0)
+    Type: Transit, Node ID: 10.0.12.2
+      Metric: 100, Bidirectional
+    Type: Transit, Node ID: 10.0.13.2
+      Metric: 100, Bidirectional
+Router   10.255.0.2       10.255.0.2       0x80000022   124  0x2  0x11eb  72
+  bits 0x0, link count 4
+  id 10.0.12.2, data 10.0.12.2, Type Transit (2)
+    Topology count: 0, Default metric: 100
+  id 10.0.23.2, data 10.0.23.1, Type Transit (2)
+    Topology count: 0, Default metric: 100
+  id 10.0.21.2, data 10.0.21.1, Type Transit (2)
+    Topology count: 0, Default metric: 100
+  id 10.255.0.2, data 255.255.255.255, Type Stub (3)
+    Topology count: 0, Default metric: 0
+  Topology default (ID 0)
+    Type: Transit, Node ID: 10.0.21.2
+      Metric: 100, Bidirectional
+    Type: Transit, Node ID: 10.0.23.2
+      Metric: 100, Bidirectional
+    Type: Transit, Node ID: 10.0.12.2
+      Metric: 100, Bidirectional
+Router   10.255.0.3       10.255.0.3       0x80000008   125  0x2  0x299c  60
+  bits 0x0, link count 3
+  id 10.0.13.2, data 10.0.13.2, Type Transit (2)
+    Topology count: 0, Default metric: 100
+  id 10.0.23.2, data 10.0.23.2, Type Transit (2)
+    Topology count: 0, Default metric: 100
+  id 10.255.0.3, data 255.255.255.255, Type Stub (3)
+    Topology count: 0, Default metric: 0
+  Topology default (ID 0)
+    Type: Transit, Node ID: 10.0.23.2
+      Metric: 100, Bidirectional
+    Type: Transit, Node ID: 10.0.13.2
+      Metric: 100, Bidirectional
+Router  *10.255.0.7       10.255.0.7       0x80000037   165  0x22 0x4c76  60
+  bits 0x2, link count 3
+  id 10.0.21.2, data 10.0.21.2, Type Transit (2)
+    Topology count: 0, Default metric: 1
+  id 192.168.56.0, data 255.255.255.0, Type Stub (3)
+    Topology count: 0, Default metric: 1
+  id 10.255.0.7, data 255.255.255.255, Type Stub (3)
+    Topology count: 0, Default metric: 0
+  Topology default (ID 0)
+    Type: Transit, Node ID: 10.0.21.2
+      Metric: 1, Bidirectional
+Network  10.0.12.2        10.255.0.2       0x80000001   125  0x2  0xd648  32
+  mask 255.255.255.0
+  attached router 10.255.0.2
+  attached router 10.255.0.1
+  Topology default (ID 0)
+    Type: Transit, Node ID: 10.255.0.1
+      Metric: 0, Bidirectional
+    Type: Transit, Node ID: 10.255.0.2
+      Metric: 0, Bidirectional
+Network  10.0.13.2        10.255.0.3       0x80000001   130  0x2  0xcf4c  32
+  mask 255.255.255.0
+  attached router 10.255.0.3
+  attached router 10.255.0.1
+  Topology default (ID 0)
+    Type: Transit, Node ID: 10.255.0.1
+      Metric: 0, Bidirectional
+    Type: Transit, Node ID: 10.255.0.3
+      Metric: 0, Bidirectional
+Network *10.0.21.2        10.255.0.7       0x80000001   165  0x22 0xb337  32
+  mask 255.255.255.0
+  attached router 10.255.0.7
+  attached router 10.255.0.2
+  Topology default (ID 0)
+    Type: Transit, Node ID: 10.255.0.2
+      Metric: 0, Bidirectional
+    Type: Transit, Node ID: 10.255.0.7
+      Metric: 0, Bidirectional
+Network  10.0.23.2        10.255.0.3       0x80000001   130  0x2  0x6fa1  32
+  mask 255.255.255.0
+  attached router 10.255.0.3
+  attached router 10.255.0.2
+  Topology default (ID 0)
+    Type: Transit, Node ID: 10.255.0.2
+      Metric: 0, Bidirectional
+    Type: Transit, Node ID: 10.255.0.3
+      Metric: 0, Bidirectional
+Summary  10.0.24.0        10.255.0.2       0x80000001   114  0x2  0x6565  28
+  mask 255.255.255.0
+  Topology default (ID 0) -> Metric: 100
+Summary  10.0.45.0        10.255.0.2       0x80000001   114  0x2  0x69e7  28
+  mask 255.255.255.0
+  Topology default (ID 0) -> Metric: 200
+Summary  10.255.0.4       10.255.0.2       0x80000001   114  0x2  0x4698  28
+  mask 255.255.255.255
+  Topology default (ID 0) -> Metric: 100
+Summary  10.255.0.5       10.255.0.2       0x80000001   114  0x2  0x2851  28
+  mask 255.255.255.255
+  Topology default (ID 0) -> Metric: 200
+"""
+
+nokia = """
+=======
+A:dr05# show router ospf database detail
+
+===============================================================================
+OSPFv2 (0) Link State Database (Type : All) (Detailed)
+===============================================================================
+-------------------------------------------------------------------------------
+Router LSA for Area 0.0.0.1
+-------------------------------------------------------------------------------
+Area Id          : 0.0.0.1              Adv Router Id    : 5.5.5.5
+Link State Id    : 5.5.5.5 (84215045)
+LSA Type         : Router
+Sequence No      : 0x8000000a           Checksum         : 0xc3a3
+Age              : 1635                 Length           : 48
+Options          : E
+Flags            : None                 Link Count       : 2
+Link Type (1)    : Stub Network
+Network (1)      : 10.0.45.0            Mask (1)         : 255.255.255.0
+No of TOS (1)    : 0                    Metric-0 (1)     : 100
+Link Type (2)    : Stub Network
+Network (2)      : 10.255.0.5           Mask (2)         : 255.255.255.255
+No of TOS (2)    : 0                    Metric-0 (2)     : 0
+-------------------------------------------------------------------------------
+Router LSA for Area 0.0.0.1
+-------------------------------------------------------------------------------
+Area Id          : 0.0.0.1              Adv Router Id    : 10.255.0.2
+Link State Id    : 10.255.0.2 (184483842)
+LSA Type         : Router
+Sequence No      : 0x80000006           Checksum         : 0xb3d6
+Age              : 2937                 Length           : 36
+Options          : E
+Flags            : ABR                  Link Count       : 1
+Link Type (1)    : Transit Network
+DR Rtr Id (1)    : 10.0.24.1            I/F Address (1)  : 10.0.24.2
+No of TOS (1)    : 0                    Metric-0 (1)     : 100
+-------------------------------------------------------------------------------
+Router LSA for Area 0.0.0.1
+-------------------------------------------------------------------------------
+Area Id          : 0.0.0.1              Adv Router Id    : 10.255.0.4
+Link State Id    : 10.255.0.4 (184483844)
+LSA Type         : Router
+Sequence No      : 0x8000000c           Checksum         : 0xd5aa
+Age              : 1754                 Length           : 60
+Options          : E
+Flags            : None                 Link Count       : 3
+Link Type (1)    : Transit Network
+DR Rtr Id (1)    : 10.0.24.1            I/F Address (1)  : 10.0.24.1
+No of TOS (1)    : 0                    Metric-0 (1)     : 100
+Link Type (2)    : Transit Network
+DR Rtr Id (2)    : 10.0.45.1            I/F Address (2)  : 10.0.45.1
+No of TOS (2)    : 0                    Metric-0 (2)     : 100
+Link Type (3)    : Stub Network
+Network (3)      : 10.255.0.4           Mask (3)         : 255.255.255.255
+No of TOS (3)    : 0                    Metric-0 (3)     : 0
+-------------------------------------------------------------------------------
+Network LSA for Area 0.0.0.1
+-------------------------------------------------------------------------------
+Area Id          : 0.0.0.1              Adv Router Id    : 10.255.0.4
+Link State Id    : 10.0.24.1 (167778305)
+LSA Type         : Network
+Sequence No      : 0x80000002           Checksum         : 0x709d
+Age              : 2938                 Length           : 32
+Options          : E
+Network Mask     : 255.255.255.0        No of Adj Rtrs   : 2
+Router Id (1)    : 10.255.0.4           Router Id (2)    : 10.255.0.2
+-------------------------------------------------------------------------------
+Network LSA for Area 0.0.0.1
+-------------------------------------------------------------------------------
+Area Id          : 0.0.0.1              Adv Router Id    : 10.255.0.4
+Link State Id    : 10.0.45.1 (167783681)
+LSA Type         : Network
+Sequence No      : 0x80000001           Checksum         : 0xfaf6
+Age              : 1755                 Length           : 32
+Options          : E
+Network Mask     : 255.255.255.0        No of Adj Rtrs   : 2
+Router Id (1)    : 10.255.0.4           Router Id (2)    : 5.5.5.5
+-------------------------------------------------------------------------------
+Summary LSA for Area 0.0.0.1
+-------------------------------------------------------------------------------
+Area Id          : 0.0.0.1              Adv Router Id    : 10.255.0.2
+Link State Id    : 10.0.12.0 (167775232)
+LSA Type         : Summary
+Sequence No      : 0x80000003           Checksum         : 0xe5ee
+Age              : 2979                 Length           : 28
+Options          : E
+Network Mask     : 255.255.255.0        Metric-0         : 100
+-------------------------------------------------------------------------------
+Summary LSA for Area 0.0.0.1
+-------------------------------------------------------------------------------
+Area Id          : 0.0.0.1              Adv Router Id    : 10.255.0.2
+Link State Id    : 10.0.13.0 (167775488)
+LSA Type         : Summary
+Sequence No      : 0x80000003           Checksum         : 0xc6a8
+Age              : 2936                 Length           : 28
+Options          : E
+Network Mask     : 255.255.255.0        Metric-0         : 200
+-------------------------------------------------------------------------------
+Summary LSA for Area 0.0.0.1
+-------------------------------------------------------------------------------
+Area Id          : 0.0.0.1              Adv Router Id    : 10.255.0.2
+Link State Id    : 10.0.21.0 (167777536)
+LSA Type         : Summary
+Sequence No      : 0x80000002           Checksum         : 0x8448
+Age              : 2979                 Length           : 28
+Options          : E
+Network Mask     : 255.255.255.0        Metric-0         : 100
+-------------------------------------------------------------------------------
+Summary LSA for Area 0.0.0.1
+-------------------------------------------------------------------------------
+Area Id          : 0.0.0.1              Adv Router Id    : 10.255.0.2
+Link State Id    : 10.0.23.0 (167778048)
+LSA Type         : Summary
+Sequence No      : 0x80000003           Checksum         : 0x6c5d
+Age              : 2979                 Length           : 28
+Options          : E
+Network Mask     : 255.255.255.0        Metric-0         : 100
+-------------------------------------------------------------------------------
+Summary LSA for Area 0.0.0.1
+-------------------------------------------------------------------------------
+Area Id          : 0.0.0.1              Adv Router Id    : 10.255.0.2
+Link State Id    : 10.255.0.1 (184483841)
+LSA Type         : Summary
+Sequence No      : 0x80000002           Checksum         : 0x627e
+Age              : 2936                 Length           : 28
+Options          : E
+Network Mask     : 255.255.255.255      Metric-0         : 100
+-------------------------------------------------------------------------------
+Summary LSA for Area 0.0.0.1
+-------------------------------------------------------------------------------
+Area Id          : 0.0.0.1              Adv Router Id    : 10.255.0.2
+Link State Id    : 10.255.0.2 (184483842)
+LSA Type         : Summary
+Sequence No      : 0x80000003           Checksum         : 0x6ad8
+Age              : 2979                 Length           : 28
+Options          : E
+Network Mask     : 255.255.255.255      Metric-0         : 0
+-------------------------------------------------------------------------------
+Summary LSA for Area 0.0.0.1
+-------------------------------------------------------------------------------
+Area Id          : 0.0.0.1              Adv Router Id    : 10.255.0.2
+Link State Id    : 10.255.0.3 (184483843)
+LSA Type         : Summary
+Sequence No      : 0x80000003           Checksum         : 0x4c91
+Age              : 2928                 Length           : 28
+Options          : E
+Network Mask     : 255.255.255.255      Metric-0         : 100
+-------------------------------------------------------------------------------
+Summary LSA for Area 0.0.0.1
+-------------------------------------------------------------------------------
+Area Id          : 0.0.0.1              Adv Router Id    : 10.255.0.2
+Link State Id    : 10.255.0.7 (184483847)
+LSA Type         : Summary
+Sequence No      : 0x80000002           Checksum         : 0x26b4
+Age              : 2979                 Length           : 28
+Options          : E
+Network Mask     : 255.255.255.255      Metric-0         : 100
+-------------------------------------------------------------------------------
+Summary LSA for Area 0.0.0.1
+-------------------------------------------------------------------------------
+Area Id          : 0.0.0.1              Adv Router Id    : 10.255.0.2
+Link State Id    : 192.168.56.0 (3232249856)
+LSA Type         : Summary
+Sequence No      : 0x80000002           Checksum         : 0xdc6c
+Age              : 2979                 Length           : 28
+Options          : E
+Network Mask     : 255.255.255.0        Metric-0         : 101
+-------------------------------------------------------------------------------
+AS Summ LSA for Area 0.0.0.1
+-------------------------------------------------------------------------------
+Area Id          : 0.0.0.1              Adv Router Id    : 10.255.0.2
+Link State Id    : 10.255.0.7 (184483847)
+LSA Type         : AS Summ
+Sequence No      : 0x80000002           Checksum         : 0x18c1
+Age              : 2979                 Length           : 28
+Options          : E
+Network Mask     : N/A                  Metric-0         : 100
+===============================================================================
+"""
+
+
+
+    vendor: str
+    cli: Cli
+
+    def __init__(self, ptytext, rid):
+        self.ptytext = ptytext
+        self.rid = rid
+        self._cli(ptytext)
+
+    def _cli(self, ptytext):
+        parser = Parser()
+        self.vendor = parser.get_vendor(ptytext)
+        if self.vendor == "Juniper":
+            self.cli = CliJuniper()
+            self.cli.get_hostname_version()
+
+class A:
+
+    def test(self):
+        a = 10
+        return a
+
+class B(A):
+
+    def best(self):
+        print("BBBB")
+
+
+
+
+"""([{"area": line[0], "level": line[1], "rid": line[2],
+                                "local_ip": line[3], "src_metric": line[4], "hostname": line[5]},
+                                {"hostname": line[6], "rid": line[7], "tgt_ip": line[8],
+                                "tgt_metric": line[9]}]
+                                ))"""
+
+
+
+
+"""l = [['49.0001', '0x1', '10.255.0.7', '10.0.21.2', '10', 'vMX-1', 'r02', '10.0.21.1'],
+    ['49.0001', '0x3', '10.255.0.2', '10.0.21.1', '10', 'r02', 'vMX-1', '10.0.21.2'],
+    ['49.0001', '0x3', '10.255.0.2', '10.0.24.2', '10', 'r02', 'dr04', '10.0.24.1'],
+    ['49.0001', '0x1', '10.255.0.5', '10.0.45.2', '10', 'dr05', 'dr04', '10.0.45.1'],
+    ['49.0001', '0x1', '10.255.4.4', '10.0.24.1', '10', 'dr04', 'r02', '10.0.24.2'],
+    ['49.0001', '0x1', '10.255.4.4', '10.0.45.1', '10', 'dr04', 'dr05', '10.0.45.2']]"""
+
+l = [['49.0001', 'L1', '10.255.0.7', '10.0.21.2', '10', 'vMX-1', 'r02', '10.0.21.1'],
+     ['49.0001', 'L1L2', '10.255.0.2', '10.0.21.1', '10', 'r02', 'vMX-1', '10.0.21.2'],
+     ['49.0001', 'L1L2', '10.255.0.2', '10.0.24.2', '10', 'r02', 'dr04', '10.0.24.1'],
+     ['49.0001', 'L1', '10.255.0.5', '10.0.45.2', '10', 'dr05', 'dr04', '10.0.45.1'],
+     ['49.0001', 'L1', '10.255.4.4', '10.0.24.1', '10', 'dr04', 'r02', '10.0.24.2'],
+     ['49.0001', 'L1', '10.255.4.4', '10.0.45.1', '10', 'dr04', 'dr05', '10.0.45.2'],
+     ['49.0001', 'L1L2', '10.255.0.1', '10.0.12.1', '10', 'r01', 'r02', '10.0.12.2'],
+     ['49.0001', 'L1L2', '10.255.0.1', '10.0.13.1', '10', 'r01', 'r03', '10.0.13.2'],
+     ['49.0001', 'L1L2', '10.255.0.2', '10.0.12.2', '10', 'r02', 'r01', '10.0.12.1'],
+     ['49.0001', 'L1L2', '10.255.0.2', '10.0.23.1', '10', 'r02', 'r03', '10.0.23.2'],
+     ['49.0001', 'L1L2', '10.255.0.3', '10.0.23.2', '10', 'r03', 'r02', '10.0.23.1'],
+     ['49.0001', 'L1L2', '10.255.0.3', '10.0.13.2', '10', 'r03', 'r01', '10.0.13.1']]
+
+l2 = [
+    ['0.0.0.0', 'Router', '10.255.0.1', 'Transit', '10.0.12.2', '200'],
+    ['0.0.0.0', 'Router', '10.255.0.1', 'Transit', '10.0.13.2', '100'],
+    ['0.0.0.0', 'Router', '10.255.0.3', 'Transit', '10.0.23.2', '100'],
+    ['0.0.0.0', 'Router', '10.255.0.2', 'Transit', '10.0.23.2', '100']]
+
+l3 = [
+    ['0.0.0.0', '10.255.0.1','10.0.12.2', '200'],
+    ['0.0.0.0', '10.255.0.1','10.0.13.2', '100'],
+    ['0.0.0.0', '10.255.0.3','10.0.23.2', '100'],
+    ['0.0.0.0', '10.255.0.2','10.0.23.2', '100']]
+
+"""
+b = BuildTopology()
+r = b.get_isis_igp_data(l)
+#r = b.get_isis_links(r)
+for i in r:
+    print(i)
+#o = b.get_ospf_igp_data(l2)"""
+
+
+

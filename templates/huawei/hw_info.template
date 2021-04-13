@@ -1,0 +1,18 @@
+Value Required,Filldown UNIT ([A-Z]+\b)
+Value Filldown SLOTNUM (\d+|[A-Z0-9]+)
+Value UMODEL (\S+)
+Value PIC (PIC\d+)
+Value PICVERSION (\S+)
+Value Filldown PCBVERSION (\S+\s\w+\s\w+)
+
+Start
+  ^\S+display\sversion
+  ^MPU\sversion\sinformation -> Info
+
+Info
+  ^${UNIT}\s(?:\(\w+\) )? -> Continue
+  ^\w+\s(?:\(\w+\) )?${SLOTNUM}
+  ^\s+[A-Z]+\s${UMODEL}\sversion information
+  ^\s+PCB\s+Version(\s|\s+):\s${PCBVERSION} -> Record
+  ^\s+${PIC}:${PICVERSION}\sversion\sinformation
+  ^[<\[]\S+[>\]] -> End

@@ -1,0 +1,5 @@
+Value Required Full (\d+)
+
+Start
+  ^\S+display\sospf\scumulative
+  ^\s.+\sFull:\s+${Full}

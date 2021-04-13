@@ -1,0 +1,20 @@
+Value Required,Filldown Area (\S+)
+Value Required,Filldown PackAttribute (\w+)
+Value Required,Filldown RID ((\d+\.){3}\d+)
+Value Required LocalAddress ((\d+\.){3}\d+)
+Value Metric (\d+)
+Value Filldown Hostname (\S+)
+Value Filldown NbrHostname (\S+)
+Value Required NbrAddress ((\d+\.){3}\d+)
+
+Start
+  ^IS-IS\slevel\s1\slink-state\sdatabase -> Level1
+
+Level1
+  ^\s+\w+:\s\w+[^0-9]\s\w+[^0-9]+\s\w+[^0-9]\sAttributes:\s${PackAttribute}
+  ^\s+Area\s+address:\s+${Area}
+  ^\s+IP\s+router\s+id:\s+${RID}
+  ^\s+Hostname:\s${Hostname}
+  ^\s+IS\sextended\sneighbor:\s${NbrHostname}\..+\sMetric:\s\w+\s${Metric}
+  ^\s\s\s\s\s+IP\saddress:\s${LocalAddress}
+  ^\s\s\s\s\s+Neighbor's\sIP\saddress:\s${NbrAddress} -> Continue.Record

@@ -1,0 +1,1241 @@
+﻿<XXXXX>display version
+Huawei Versatile Routing Platform Software
+VRP (R) software, Version 8.190 (NE9000 V800R011C10SPC100)
+Copyright (C) 2012-2019 Huawei Technologies Co., Ltd.
+HUAWEI NE9000 uptime is 378 days, 19 hours, 49 minutes
+Patch Version: V800R011SPH010
+
+NE9000-20 version information:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+BKP  version information:
+  PCB         Version : CR58BKP20A REV F
+  MPU  Slot  Quantity : 2
+  SFU  Slot  Quantity : 8
+  LPU  Slot  Quantity : 20
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+MPU version information:
+
+MPU (Master) 21 : uptime is 378 days, 19 hours, 49 minutes
+  StartupTime 2020/02/07   01:59:38
+  SDRAM Memory Size   : 32768 M bytes
+  FLASH Memory Size   : 16 M bytes
+  NVRAM Memory Size   : 512 K bytes
+  CFCARD Memory Size  : 30721 M bytes
+  MPU CR9D0MPUN180 version information
+  PCB         Version : CR58MPUN REV C
+  EPLD        Version : 106
+  FPGA        Version : 10a
+  BootROM     Version : 07.11
+  BootLoad    Version : 48.10
+  MonitorBUS version information:
+  Software    Version : 11
+
+MPU (Slave) 22 : uptime is 378 days, 19 hours, 47 minutes
+  StartupTime 2020/02/07   02:01:29
+  SDRAM Memory Size   : 32768 M bytes
+  FLASH Memory Size   : 16 M bytes
+  NVRAM Memory Size   : 512 K bytes
+  CFCARD Memory Size  : 30721 M bytes
+  MPU CR9D0MPUN180 version information
+  PCB         Version : CR58MPUN REV C
+  EPLD        Version : 106
+  FPGA        Version : 10a
+  BootROM     Version : 07.11
+  BootLoad    Version : 48.10
+  MonitorBUS version information:
+  Software    Version : 11
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+LPU version information:
+
+LPU 1 : uptime is 378 days, 4 hours, 6 minutes
+  StartupTime 2020/02/07   17:43:08
+  Host processor :
+  SDRAM Memory Size   : 16384 M bytes
+  Flash Memory Size   : 128 M bytes
+  LPU CR9D00EENB83 version information:
+  PCB Version         : CR58LPU2TM REV A
+  EPLD Version        : 107
+  EPLD3 Version       : 101
+  FPGA Version        : 107
+  FPGA2 Version       : 107
+  NP Version          : 100
+  TM Version          : 110
+  BootROM Version     : 03.79
+  NSE version information:
+  PCB Version         : NSE REV A
+  PIC0:CR58EENBD0 version information
+  StartupTime         : 2020/02/07    17:44:28
+  PCB Version         : CR58EENBD REV A
+  EPLD Version        : 103
+  EPLD2 Version       : 103
+  FPGA Version        : 105
+  FPGA2 Version       : 105
+  CHIP Version        : 100
+  CHIP2 Version       : 100
+  MonitorBUS version information:
+  Software Version : 11
+
+LPU 2 : uptime is 378 days, 0 hour, 21 minutes
+  StartupTime 2020/02/07   21:27:37
+  Host processor :
+  SDRAM Memory Size   : 16384 M bytes
+  Flash Memory Size   : 128 M bytes
+  LPU CR9D00EENB83 version information:
+  PCB Version         : CR58LPU2TM REV A
+  EPLD Version        : 107
+  EPLD3 Version       : 101
+  FPGA Version        : 107
+  FPGA2 Version       : 107
+  NP Version          : 100
+  TM Version          : 110
+  BootROM Version     : 03.79
+  NSE version information:
+  PCB Version         : NSE REV A
+  PIC0:CR58EENBD0 version information
+  StartupTime         : 2020/02/07    21:29:16
+  PCB Version         : CR58EENBD REV A
+  EPLD Version        : 103
+  EPLD2 Version       : 103
+  FPGA Version        : 105
+  FPGA2 Version       : 105
+  CHIP Version        : 100
+  CHIP2 Version       : 100
+  MonitorBUS version information:
+  Software Version : 11
+
+LPU 3 : uptime is 378 days, 19 hours, 20 minutes
+  StartupTime 2020/02/07   02:29:12
+  Host processor :
+  SDRAM Memory Size   : 16384 M bytes
+  Flash Memory Size   : 128 M bytes
+  LPU CR9D00EENB83 version information:
+  PCB Version         : CR58LPU2TM REV A
+  EPLD Version        : 107
+  EPLD3 Version       : 101
+  FPGA Version        : 107
+  FPGA2 Version       : 107
+  NP Version          : 100
+  TM Version          : 110
+  BootROM Version     : 03.79
+  NSE version information:
+  PCB Version         : NSE REV A
+  PIC0:CR58EENBD0 version information
+  StartupTime         : 2020/02/07    02:30:48
+  PCB Version         : CR58EENBD REV A
+  EPLD Version        : 103
+  EPLD2 Version       : 103
+  FPGA Version        : 105
+  FPGA2 Version       : 105
+  CHIP Version        : 100
+  CHIP2 Version       : 100
+  MonitorBUS version information:
+  Software Version : 11
+
+LPU 4 : uptime is 378 days, 0 hour, 16 minutes
+  StartupTime 2020/02/07   21:32:30
+  Host processor :
+  SDRAM Memory Size   : 16384 M bytes
+  Flash Memory Size   : 128 M bytes
+  LPU CR9D00EENB83 version information:
+  PCB Version         : CR58LPU2TM REV A
+  EPLD Version        : 107
+  EPLD3 Version       : 101
+  FPGA Version        : 107
+  FPGA2 Version       : 107
+  NP Version          : 100
+  TM Version          : 110
+  BootROM Version     : 03.79
+  NSE version information:
+  PCB Version         : NSE REV A
+  PIC0:CR58EENBD0 version information
+  StartupTime         : 2020/02/07    21:34:15
+  PCB Version         : CR58EENBD REV A
+  EPLD Version        : 103
+  EPLD2 Version       : 103
+  FPGA Version        : 105
+  FPGA2 Version       : 105
+  CHIP Version        : 100
+  CHIP2 Version       : 100
+  MonitorBUS version information:
+  Software Version : 11
+
+LPU 5 : uptime is 378 days, 19 hours, 34 minutes
+  StartupTime 2020/02/07   02:14:51
+  Host processor :
+  SDRAM Memory Size   : 16384 M bytes
+  Flash Memory Size   : 128 M bytes
+  LPU CR9D00EENB83 version information:
+  PCB Version         : CR58LPU2TM REV A
+  EPLD Version        : 107
+  EPLD3 Version       : 101
+  FPGA Version        : 107
+  FPGA2 Version       : 107
+  NP Version          : 100
+  TM Version          : 110
+  BootROM Version     : 03.79
+  NSE version information:
+  PCB Version         : NSE REV A
+  PIC0:CR58EENBD0 version information
+  StartupTime         : 2020/02/07    02:16:30
+  PCB Version         : CR58EENBD REV A
+  EPLD Version        : 103
+  EPLD2 Version       : 103
+  FPGA Version        : 105
+  FPGA2 Version       : 105
+  CHIP Version        : 100
+  CHIP2 Version       : 100
+  MonitorBUS version information:
+  Software Version : 11
+
+LPU 6 : uptime is 378 days, 19 hours, 3 minutes
+  StartupTime 2020/02/07   02:45:32
+  Host processor :
+  SDRAM Memory Size   : 16384 M bytes
+  Flash Memory Size   : 128 M bytes
+  LPU CR9D00EENB83 version information:
+  PCB Version         : CR58LPU2TM REV A
+  EPLD Version        : 107
+  EPLD3 Version       : 101
+  FPGA Version        : 107
+  FPGA2 Version       : 107
+  NP Version          : 100
+  TM Version          : 110
+  BootROM Version     : 03.79
+  NSE version information:
+  PCB Version         : NSE REV A
+  PIC0:CR58EENBD0 version information
+  StartupTime         : 2020/02/07    02:47:11
+  PCB Version         : CR58EENBD REV A
+  EPLD Version        : 103
+  EPLD2 Version       : 103
+  FPGA Version        : 105
+  FPGA2 Version       : 105
+  CHIP Version        : 100
+  CHIP2 Version       : 100
+  MonitorBUS version information:
+  Software Version : 11
+
+LPU 7 : uptime is 378 days, 0 hour, 13 minutes
+  StartupTime 2020/02/07   21:35:47
+  Host processor :
+  SDRAM Memory Size   : 16384 M bytes
+  Flash Memory Size   : 128 M bytes
+  LPU CR9D00EENB83 version information:
+  PCB Version         : CR58LPU2TM REV A
+  EPLD Version        : 107
+  EPLD3 Version       : 101
+  FPGA Version        : 107
+  FPGA2 Version       : 107
+  NP Version          : 100
+  TM Version          : 110
+  BootROM Version     : 03.79
+  NSE version information:
+  PCB Version         : NSE REV A
+  PIC0:CR58EENBD0 version information
+  StartupTime         : 2020/02/07    21:37:26
+  PCB Version         : CR58EENBD REV A
+  EPLD Version        : 103
+  EPLD2 Version       : 103
+  FPGA Version        : 105
+  FPGA2 Version       : 105
+  CHIP Version        : 100
+  CHIP2 Version       : 100
+  MonitorBUS version information:
+  Software Version : 11
+
+LPU 8 : uptime is 205 days, 9 hours, 55 minutes
+  StartupTime 2020/07/29   03:54:43
+  Host processor :
+  SDRAM Memory Size   : 16384 M bytes
+  Flash Memory Size   : 128 M bytes
+  LPU CR9D00EENB83 version information:
+  PCB Version         : CR58LPU2TM REV A
+  EPLD Version        : 107
+  EPLD3 Version       : 101
+  FPGA Version        : 107
+  FPGA2 Version       : 107
+  NP Version          : 100
+  TM Version          : 110
+  BootROM Version     : 03.79
+  NSE version information:
+  PCB Version         : NSE REV A
+  PIC0:CR58EENBD0 version information
+  StartupTime         : 2020/07/29    03:57:00
+  PCB Version         : CR58EENBD REV A
+  EPLD Version        : 103
+  EPLD2 Version       : 103
+  FPGA Version        : 105
+  FPGA2 Version       : 105
+  CHIP Version        : 100
+  CHIP2 Version       : 100
+  MonitorBUS version information:
+  Software Version : 11
+
+LPU 9 : uptime is 205 days, 9 hours, 55 minutes
+  StartupTime 2020/07/29   03:55:11
+  Host processor :
+  SDRAM Memory Size   : 16384 M bytes
+  Flash Memory Size   : 128 M bytes
+  LPU CR9D00EENB83 version information:
+  PCB Version         : CR58LPU2TM REV A
+  EPLD Version        : 107
+  EPLD3 Version       : 101
+  FPGA Version        : 107
+  FPGA2 Version       : 107
+  NP Version          : 100
+  TM Version          : 110
+  BootROM Version     : 03.79
+  NSE version information:
+  PCB Version         : NSE REV A
+  PIC0:CR58EENBD0 version information
+  StartupTime         : 2020/07/29    03:57:28
+  PCB Version         : CR58EENBD REV A
+  EPLD Version        : 103
+  EPLD2 Version       : 103
+  FPGA Version        : 105
+  FPGA2 Version       : 105
+  CHIP Version        : 100
+  CHIP2 Version       : 100
+  MonitorBUS version information:
+  Software Version : 11
+
+LPU 10 : uptime is 59 days, 13 hours, 15 minutes
+  StartupTime 2020/12/22   00:33:55
+  Host processor :
+  SDRAM Memory Size   : 16384 M bytes
+  Flash Memory Size   : 128 M bytes
+  LPU CR9D00EENB83 version information:
+  PCB Version         : CR58LPU2TM REV B
+  EPLD Version        : 107
+  EPLD3 Version       : 101
+  FPGA Version        : 107
+  FPGA2 Version       : 107
+  NP Version          : 100
+  TM Version          : 110
+  BootROM Version     : 03.79
+  NSE version information:
+  PCB Version         : NSE REV A
+  PIC0:CR58EENBD0 version information
+  StartupTime         : 2020/12/22    00:45:10
+  PCB Version         : CR58EENBD REV B
+  EPLD Version        : 103
+  EPLD2 Version       : 103
+  FPGA Version        : 105
+  FPGA2 Version       : 105
+  CHIP Version        : 100
+  CHIP2 Version       : 100
+  MonitorBUS version information:
+  Software Version : 11
+
+LPU 11 : uptime is 59 days, 13 hours, 14 minutes
+  StartupTime 2020/12/22   00:34:17
+  Host processor :
+  SDRAM Memory Size   : 16384 M bytes
+  Flash Memory Size   : 128 M bytes
+  LPU CR9D00EENB83 version information:
+  PCB Version         : CR58LPU2TM REV B
+  EPLD Version        : 107
+  EPLD3 Version       : 101
+  FPGA Version        : 107
+  FPGA2 Version       : 107
+  NP Version          : 100
+  TM Version          : 110
+  BootROM Version     : 03.79
+  NSE version information:
+  PCB Version         : NSE REV A
+  PIC0:CR58EENBD0 version information
+  StartupTime         : 2020/12/22    00:45:31
+  PCB Version         : CR58EENBD REV B
+  EPLD Version        : 103
+  EPLD2 Version       : 103
+  FPGA Version        : 105
+  FPGA2 Version       : 105
+  CHIP Version        : 100
+  CHIP2 Version       : 100
+  MonitorBUS version information:
+  Software Version : 11
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+SFU version information:
+
+SFU 23 : uptime is 378 days, 19 hours, 47 minutes
+  StartupTime 2020/02/07   02:02:13
+  SDRAM Memory Size   : 1024 M bytes
+  Flash Memory Size   : 64 M bytes
+  SFU CR9D0SFUT480 version information:
+  PCB         Version : CR58SFU4TB REV A
+  EPLD        Version : 100
+  BootROM     Version : 03.47
+  MonitorBUS version information:
+  Software Version : 11
+
+SFU 24 : uptime is 378 days, 19 hours, 47 minutes
+  StartupTime 2020/02/07   02:02:17
+  SDRAM Memory Size   : 1024 M bytes
+  Flash Memory Size   : 64 M bytes
+  SFU CR9D0SFUT480 version information:
+  PCB         Version : CR58SFU4TB REV A
+  EPLD        Version : 100
+  BootROM     Version : 03.47
+  MonitorBUS version information:
+  Software Version : 11
+
+SFU 25 : uptime is 378 days, 19 hours, 47 minutes
+  StartupTime 2020/02/07   02:02:17
+  SDRAM Memory Size   : 1024 M bytes
+  Flash Memory Size   : 64 M bytes
+  SFU CR9D0SFUT480 version information:
+  PCB         Version : CR58SFU4TB REV A
+  EPLD        Version : 100
+  BootROM     Version : 03.47
+  MonitorBUS version information:
+  Software Version : 11
+
+SFU 26 : uptime is 378 days, 19 hours, 47 minutes
+  StartupTime 2020/02/07   02:02:13
+  SDRAM Memory Size   : 1024 M bytes
+  Flash Memory Size   : 64 M bytes
+  SFU CR9D0SFUT480 version information:
+  PCB         Version : CR58SFU4TB REV A
+  EPLD        Version : 100
+  BootROM     Version : 03.47
+  MonitorBUS version information:
+  Software Version : 11
+
+SFU 27 : uptime is 378 days, 19 hours, 47 minutes
+  StartupTime 2020/02/07   02:02:07
+  SDRAM Memory Size   : 1024 M bytes
+  Flash Memory Size   : 64 M bytes
+  SFU CR9D0SFUT480 version information:
+  PCB         Version : CR58SFU4TB REV A
+  EPLD        Version : 100
+  BootROM     Version : 03.47
+  MonitorBUS version information:
+  Software Version : 11
+
+SFU 28 : uptime is 378 days, 19 hours, 47 minutes
+  StartupTime 2020/02/07   02:02:13
+  SDRAM Memory Size   : 1024 M bytes
+  Flash Memory Size   : 64 M bytes
+  SFU CR9D0SFUT480 version information:
+  PCB         Version : CR58SFU4TB REV A
+  EPLD        Version : 100
+  BootROM     Version : 03.47
+  MonitorBUS version information:
+  Software Version : 11
+
+SFU 29 : uptime is 378 days, 19 hours, 47 minutes
+  StartupTime 2020/02/07   02:02:18
+  SDRAM Memory Size   : 1024 M bytes
+  Flash Memory Size   : 64 M bytes
+  SFU CR9D0SFUT480 version information:
+  PCB         Version : CR58SFU4TB REV A
+  EPLD        Version : 100
+  BootROM     Version : 03.47
+  MonitorBUS version information:
+  Software Version : 11
+
+SFU 30 : uptime is 378 days, 19 hours, 47 minutes
+  StartupTime 2020/02/07   02:02:11
+  SDRAM Memory Size   : 1024 M bytes
+  Flash Memory Size   : 64 M bytes
+  SFU CR9D0SFUT480 version information:
+  PCB         Version : CR58SFU4TB REV A
+  EPLD        Version : 100
+  BootROM     Version : 03.47
+  MonitorBUS version information:
+  Software Version : 11
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+CLK version information:
+
+CLK 35 : uptime is 378 days, 19 hours, 49 minutes
+  StartupTime 2020/02/07   01:59:38
+  FPGA     Version : 170
+  DSP      Version : 17060021
+
+CLK 36 : uptime is 378 days, 19 hours, 47 minutes
+  StartupTime 2020/02/07   02:01:29
+  FPGA     Version : 170
+  DSP      Version : 17060021
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Power version information:
+
+POWER PWRA MonitorBUS version information:
+  PM 12 version information:
+  PCB      Version : PDC-2200WB REV A
+  Software Version : 2.6
+  PM 13 version information:
+  PCB      Version : PDC-2200WB REV A
+  Software Version : 2.6
+  PM 14 version information:
+  PCB      Version : PDC-2200WB REV A
+  Software Version : 2.6
+  PM 15 version information:
+  PCB      Version : PDC-2200WB REV A
+  Software Version : 2.6
+  PM 16 version information:
+  PCB      Version : PDC-2200WB REV A
+  Software Version : 2.6
+  PM 17 version information:
+  PCB      Version : PDC-2200WB REV A
+  Software Version : 2.6
+  PM 18 version information:
+  PCB      Version : PDC-2200WB REV A
+  Software Version : 2.6
+  PM 19 version information:
+  PCB      Version : PDC-2200WB REV A
+  Software Version : 2.6
+  PM 20 version information:
+  PCB      Version : PDC-2200WB REV A
+  Software Version : 2.6
+  PM 21 version information:
+  PCB      Version : PDC-2200WB REV A
+  Software Version : 2.6
+  PM 22 version information:
+  PCB      Version : PDC-2200WB REV A
+  Software Version : 2.6
+  PM 23 version information:
+  PCB      Version : PDC-2200WB REV A
+  Software Version : 2.6
+  PM 24 version information:
+  PCB      Version : PDC-2200WB REV A
+  Software Version : 2.6
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+FAN version information:
+
+FAN FAN1 MonitorBUS version information:
+  PCB      Version : CR56FCBJ REV D
+  Software Version : 4.31
+
+FAN FAN2 MonitorBUS version information:
+  PCB      Version : CR56FCBJ REV D
+  Software Version : 4.31
+
+FAN FAN3 MonitorBUS version information:
+  PCB      Version : CR56FCBJ REV D
+  Software Version : 4.31
+
+FAN FAN4 MonitorBUS version information:
+  PCB      Version : CR56FCBJ REV D
+  Software Version : 4.31
+
+FAN FAN5 MonitorBUS version information:
+  PCB      Version : CR56FCBJ REV D
+  Software Version : 4.31
+
+FAN FAN6 MonitorBUS version information:
+  PCB      Version : CR56FCBJ REV D
+  Software Version : 4.31
+
+FAN FAN7 MonitorBUS version information:
+  PCB      Version : CR56FCBJ REV D
+  Software Version : 4.31
+
+FAN FAN8 MonitorBUS version information:
+  PCB      Version : CR56FCBJ REV D
+  Software Version : 4.31
+
+FAN FAN9 MonitorBUS version information:
+  PCB      Version : CR58FCBL REV A
+  Software Version : 1.19
+
+FAN FAN10 MonitorBUS version information:
+  PCB      Version : CR58FCBL REV A
+  Software Version : 1.19
+
+FAN FAN11 MonitorBUS version information:
+  PCB      Version : CR58FCBL REV A
+  Software Version : 1.19
+
+FAN FAN12 MonitorBUS version information:
+  PCB      Version : CR58FCBL REV A
+  Software Version : 1.19
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+CMU version information:
+
+CMU (Slave) CMU1 : uptime is 143 days, 12 hours, 39 minutes
+  StartupTime   2020/09/29   03:04:54
+  SDRAM Memory  Size : 256 M bytes
+  Flash Memory  Size : 32 M bytes
+  CMU CR9D000CMU60 version information:
+  PCB        Version : CR58CMUB REV B
+  CPLD       Version : 008
+  BIOS       Version : 202
+  SOFT       Version : 1741
+  MonitorBUS version information:
+  Software   Version : 207
+
+CMU (Master) CMU2 : uptime is 281 days, 0 hour, 43 minutes
+  StartupTime   2020/05/14   14:03:49
+  SDRAM Memory  Size : 256 M bytes
+  Flash Memory  Size : 32 M bytes
+  CMU CR9D000CMU60 version information:
+  PCB        Version : CR58CMUB REV B
+  CPLD       Version : 008
+  BIOS       Version : 202
+  SOFT       Version : 1741
+  MonitorBUS version information:
+  Software   Version : 207
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>display startup
+MainBoard:
+  Configured startup system software:        cfcard:/V800R011C10SPC100-NE9000.cc
+  Startup system software:                   cfcard:/V800R011C10SPC100-NE9000.cc
+  Next startup system software:              cfcard:/V800R011C10SPC100-NE9000.cc
+  Startup saved-configuration file:          cfcard:/vrpcfg.zip
+  Next startup saved-configuration file:     cfcard:/vrpcfg.zip
+  Startup paf file:                          default
+  Next startup paf file:                     default
+  Startup patch package:                     cfcard:/NE9000V800R011SPH010-C10SPC100.PAT
+  Next startup patch package:                cfcard:/NE9000V800R011SPH010-C10SPC100.PAT
+SlaveBoard:
+  Configured startup system software:        cfcard:/V800R011C10SPC100-NE9000.cc
+  Startup system software:                   cfcard:/V800R011C10SPC100-NE9000.cc
+  Next startup system software:              cfcard:/V800R011C10SPC100-NE9000.cc
+  Startup saved-configuration file:          cfcard:/vrpcfg.zip
+  Next startup saved-configuration file:     cfcard:/vrpcfg.zip
+  Startup paf file:                          default
+  Next startup paf file:                     default
+  Startup patch package:                     cfcard:/NE9000V800R011SPH010-C10SPC100.PAT
+  Next startup patch package:                cfcard:/NE9000V800R011SPH010-C10SPC100.PAT
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>display health
+----------------------------------------------------------------
+Slot                       CPU Usage  Memory Usage(Used/Total)
+----------------------------------------------------------------
+21      MPU(Master)             8%          10%   3268MB/31852MB
+1       LPU                     6%          14%   2287MB/15357MB
+2       LPU                     6%          14%   2286MB/15357MB
+3       LPU                     6%          15%   2316MB/15357MB
+4       LPU                     6%          14%   2292MB/15357MB
+5       LPU                     6%          15%   2305MB/15357MB
+6       LPU                     6%          14%   2290MB/15357MB
+7       LPU                     6%          14%   2300MB/15357MB
+8       LPU                     6%          14%   2233MB/15357MB
+9       LPU                     6%          14%   2215MB/15357MB
+10      LPU                     5%          13%   2076MB/15357MB
+11      LPU                     5%          13%   2099MB/15357MB
+23      SFU                     8%          13%    128MB/974MB
+24      SFU                     8%          13%    128MB/974MB
+25      SFU                     8%          12%    126MB/974MB
+26      SFU                     8%          12%    126MB/974MB
+27      SFU                     8%          12%    126MB/974MB
+28      SFU                     8%          13%    128MB/974MB
+29      SFU                     7%          13%    128MB/974MB
+30      SFU                     8%          13%    128MB/974MB
+22      MPU(Slave)              1%           6%   2212MB/31852MB
+----------------------------------------------------------------
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>display device
+NE9000-20's Device status:
+-------------------------------------------------------------------------------
+Slot #   Type    Online     Register     Status     Role   LsId   Primary
+-------------------------------------------------------------------------------
+1        LPU     Present    Registered   Normal     LC     0      NA
+2        LPU     Present    Registered   Normal     LC     0      NA
+3        LPU     Present    Registered   Normal     LC     0      NA
+4        LPU     Present    Registered   Normal     LC     0      NA
+5        LPU     Present    Registered   Normal     LC     0      NA
+6        LPU     Present    Registered   Normal     LC     0      NA
+7        LPU     Present    Registered   Normal     LC     0      NA
+8        LPU     Present    Registered   Normal     LC     0      NA
+9        LPU     Present    Registered   Normal     LC     0      NA
+10       LPU     Present    Registered   Normal     LC     0      NA
+11       LPU     Present    Registered   Normal     LC     0      NA
+21       MPU     Present    Registered   Normal     MMB    0      Master
+22       MPU     Present    Registered   Normal     MMB    0      Slave
+23       SFU     Present    Registered   Normal     OTHER  0      NA
+24       SFU     Present    Registered   Normal     OTHER  0      NA
+25       SFU     Present    Registered   Normal     OTHER  0      NA
+26       SFU     Present    Registered   Normal     OTHER  0      NA
+27       SFU     Present    Registered   Normal     OTHER  0      NA
+28       SFU     Present    Registered   Normal     OTHER  0      NA
+29       SFU     Present    Registered   Normal     OTHER  0      NA
+30       SFU     Present    Registered   Normal     OTHER  0      NA
+35       CLK     Present    Registered   Normal     OTHER  0      Master
+36       CLK     Present    Registered   Normal     OTHER  0      Slave
+PWRA     PWR     Present    Registered   Normal     OTHER  0      NA
+FAN1     FAN     Present    Registered   Normal     OTHER  0      NA
+FAN2     FAN     Present    Registered   Normal     OTHER  0      NA
+FAN3     FAN     Present    Registered   Normal     OTHER  0      NA
+FAN4     FAN     Present    Registered   Normal     OTHER  0      NA
+FAN5     FAN     Present    Registered   Normal     OTHER  0      NA
+FAN6     FAN     Present    Registered   Normal     OTHER  0      NA
+FAN7     FAN     Present    Registered   Normal     OTHER  0      NA
+FAN8     FAN     Present    Registered   Normal     OTHER  0      NA
+FAN9     FAN     Present    Registered   Normal     OTHER  0      NA
+FAN10    FAN     Present    Registered   Normal     OTHER  0      NA
+FAN11    FAN     Present    Registered   Normal     OTHER  0      NA
+FAN12    FAN     Present    Registered   Normal     OTHER  0      NA
+CMU1     CMU     Present    Registered   Normal     OTHER  0      Slave
+CMU2     CMU     Present    Registered   Normal     OTHER  0      Master
+-------------------------------------------------------------------------------
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>display device pic-status
+Pic-status information :
+--------------------------------------------------------------------------------
+Pic#   Status       Type                      Port_count Init_result  Logic_down
+--------------------------------------------------------------------------------
+1/0    Registered   ETH_20x100GF_CARD         20         SUCCESS      SUCCESS
+2/0    Registered   ETH_20x100GF_CARD         20         SUCCESS      SUCCESS
+3/0    Registered   ETH_20x100GF_CARD         20         SUCCESS      SUCCESS
+4/0    Registered   ETH_20x100GF_CARD         20         SUCCESS      SUCCESS
+5/0    Registered   ETH_20x100GF_CARD         20         SUCCESS      SUCCESS
+6/0    Registered   ETH_20x100GF_CARD         20         SUCCESS      SUCCESS
+7/0    Registered   ETH_20x100GF_CARD         20         SUCCESS      SUCCESS
+8/0    Registered   ETH_20x100GF_CARD         20         SUCCESS      SUCCESS
+9/0    Registered   ETH_20x100GF_CARD         20         SUCCESS      SUCCESS
+10/0   Registered   ETH_20x100GF_CARD         20         SUCCESS      SUCCESS
+11/0   Registered   ETH_20x100GF_CARD         20         SUCCESS      SUCCESS
+--------------------------------------------------------------------------------
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>display device 1
+
+LPU CR9D00EENB83 1's detail information:
+---------------------------------------------------------------------------
+  Description:                            20-Port 100GE-QSFP28 FlexE/MACSec Integrated Line Process Unit CM(LPUI-2T-CM)
+  Board status:                           Normal
+  Register:                               Registered
+  Uptime:                                 2020/02/07   17:43:08
+  CPU Utilization(%):                     6%
+  Mem Usage(%):                           14%
+Clock information:
+  State item                              State
+  Current line-clock:                     35
+  Line-clock 35 state:                    Actived
+  Line-clock 36 state:                    Actived
+Statistic information:
+  Statistic item                          Statistic number
+  SERDES interface link lost:             0
+PIC0: CR58EENBD0 information:
+  Description:20-Port 100GE-QSFP28 FlexE/MACSec Integrated Line Process Unit
+  Uptime:                                 2020/02/07    17:44:28
+  Card type:                              ETHERNET
+  Port number:                            20
+  Converge info:                          non-converge
+---------------------------------------------------------------------------
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>
+<XXXXX>display isis lsdp verbose
+                        ^
+Error: Wrong parameter found at '^' position.
+<XXXXX>display isis lsd verb
+<XXXXX>display isis lsdb ve
+<XXXXX>display isis lsdb verbose
+
+                        Database information for ISIS(1)
+                        -----------------------------------
+
+
+                          Level-2 Link State Database
+
+LSPID                  Seq Num    Checksum   HoldTime       Length   ATT/P/OL
+-----------------------------------------------------------------------------
+0102.5116.1001.00-00   0x001513ea 0x9af3     1125           170      0/0/0
+ SOURCE       AKSI-CON1.00
+ HOST NAME    AKSI-CON1
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ AREA ADDR    49.0001
+ INTF ADDR    10.251.161.1
++NBR  ID      RNDN-RGR3.00  COST: 1000000
++NBR  ID      AKSI-AR1.00  COST: 10000000
++IP-Extended  10.251.161.1    255.255.255.255  COST: 0
++IP-Extended  10.251.161.12   255.255.255.252  COST: 1000000
++IP-Extended  10.251.161.116  255.255.255.252  COST: 1000000
++IP-Extended  10.251.161.140  255.255.255.252  COST: 1000000
++IP-Extended  10.251.161.144  255.255.255.252  COST: 1000000
++IP-Extended  10.251.161.152  255.255.255.252  COST: 1000000
++IP-Extended  10.251.161.164  255.255.255.252  COST: 1000000
++IP-Extended  95.167.177.88   255.255.255.255  COST: 1000000
+
+0102.5500.1001.00-00   0x0006457a 0xbb5e     582            103      0/0/0
+ SOURCE       UAK1-R1.00
+ HOST NAME    UAK1-R1
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ AREA ADDR    49.0001
+ INTF ADDR    10.255.1.1
++NBR  ID      UAK1-CR-B.00  COST: 11000
++IP-Extended  10.255.1.1      255.255.255.255  COST: 0
++IP-Extended  87.226.135.16   255.255.255.252  COST: 11000
+
+0102.5500.3001.00-00   0x00083089 0x080c     1023           150      0/0/0
+ SOURCE       UAK3-R1.00
+ HOST NAME    UAK3-R1
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ AREA ADDR    49.0001
+ INTF ADDR    10.255.3.1
++NBR  ID      ud_valday-r1.00  COST: 70000
++NBR  ID      UAK3-AR4.00  COST: 10
++IP-Extended  10.245.3.0      255.255.255.224  COST: 0
++IP-Extended  10.250.225.0    255.255.255.252  COST: 70000
++IP-Extended  10.250.225.4    255.255.255.252  COST: 70000
++IP-Extended  10.255.3.1      255.255.255.255  COST: 0
++IP-Extended  87.226.136.12   255.255.255.252  COST: 10
++IP-Extended  87.226.136.20   255.255.255.252  COST: 10
+
+0102.5500.3002.00-00   0x00082cba 0x647f     346            139      0/0/0
+ SOURCE       UAK3-R2.00
+ HOST NAME    UAK3-R2
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ AREA ADDR    49.0001
+ INTF ADDR    10.255.3.2
++NBR  ID      UAK3-AR4.00  COST: 10
++IP-Extended  10.249.3.0      255.255.255.192  COST: 0
++IP-Extended  10.250.3.0      255.255.255.240  COST: 0
++IP-Extended  10.250.3.16     255.255.255.240  COST: 0
++IP-Extended  10.250.3.64     255.255.255.192  COST: 0
++IP-Extended  10.255.3.2      255.255.255.255  COST: 0
++IP-Extended  87.226.136.16   255.255.255.252  COST: 10
+
+0102.5500.7003.00-00   0x00088dff 0x6a8a     724            190      0/0/0
+ SOURCE       uak7-r3.00
+ HOST NAME    uak7-r3
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ NLPID        IPV6
+ AREA ADDR    49.0001
+ INTF ADDR    10.255.7.3
+ INTF ADDR    87.226.129.16
++NBR  ID      2130.5920.7188.02  COST: 70000
++NBR  ID      2130.5920.7189.02  COST: 70000
++IP-Extended  188.128.105.12  255.255.255.252  COST: 70000
++IP-Extended  10.250.7.16     255.255.255.240  COST: 1000
++IP-Extended  188.128.105.8   255.255.255.252  COST: 70000
++IP-Extended  10.255.7.3      255.255.255.255  COST: 0
++IP-Extended  87.226.129.16   255.255.255.255  COST: 0
+ Router ID    10.255.7.3
+
+0102.5500.8003.00-00   0x0003d423 0x39e9     937            139      0/0/0
+ SOURCE       ud_khabarovsk-r1.00
+ HOST NAME    ud_khabarovsk-r1
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ AREA ADDR    49.0001
+ INTF ADDR    10.255.8.3
++NBR  ID      KHBR-RGR2.00  COST: 10
++IP-Extended  10.10.6.0       255.255.255.252  COST: 0
++IP-Extended  10.255.8.3      255.255.255.255  COST: 0
++IP-Extended  87.226.202.68   255.255.255.252  COST: 0
++IP-Extended  87.226.215.48   255.255.255.252  COST: 0
++IP-Extended  213.59.200.16   255.255.255.252  COST: 10
+
+0102.5500.9001.00-00   0x0002dfe6 0x8349     487            121      0/0/0
+ SOURCE       UAK9-R1.00
+ HOST NAME    UAK9-R1
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ AREA ADDR    49.0001
+ INTF ADDR    10.255.9.1
++NBR  ID      UAK10-R1.00  COST: 16452
++IP-Extended  10.250.9.0      255.255.255.240  COST: 0
++IP-Extended  10.250.9.16     255.255.255.240  COST: 0
++IP-Extended  10.255.9.1      255.255.255.255  COST: 0
++IP-Extended  87.226.135.168  255.255.255.252  COST: 16452
+
+0102.5501.0001.00-00   0x000291e3 0x7806     864            125      0/0/0
+ SOURCE       UAK10-R1.00
+ HOST NAME    UAK10-R1
+Auth: *****     Len: 16     Type: MD5
+ NLPID        ISO
+ NLPID        IPV4
+ AREA ADDR    49.0001
+ INTF ADDR    10.255.10.1
++NBR  ID      UAK10-RGR1.00  COST: 10
++NBR  ID      UAK9-R1.00  COST: 10
++IP-Extended  10.255.10.1     255.255.255.255  COST: 0
++IP-Extended  87.226.135.148  255.255.255.252  COST: 10
++IP-Extended  87.226.135.168  255.255.255.252  COST: 10
+
+0102.5522.5001.00-00   0x00047ba9 0xfefa     532            159      0/0/0
+ SOURCE       ud_valday-r1.00
+ HOST NAME    ud_valday-r1
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ NLPID        IPV6
+ AREA ADDR    49.0001
+ INTF ADDR    10.255.225.1
++NBR  ID      UAK3-R1.00  COST: 70000
++NBR  ID      UAK3-R1.00  COST: 70000
++IP-Extended  10.255.225.1    255.255.255.255  COST: 0
++IP-Extended  10.250.225.0    255.255.255.252  COST: 70000
++IP-Extended  10.250.225.4    255.255.255.252  COST: 70000
+ Router ID    10.255.225.1
+
+0212.4819.5102.00-00   0x0000ce21 0x156d     534            290      0/0/1
+ SOURCE       SPBR-SR2.00
+ HOST NAME    SPBR-SR2
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ NLPID        IPV6
+ AREA ADDR    49.0001
+ INTF ADDR    212.48.195.102
++NBR  ID      SPBR-RGR2.00  COST: 1000000
++NBR  ID      SPBR-SR1.00  COST: 1000000
++IP-Extended  212.48.195.102  255.255.255.255  COST: 0
++IP-Extended  212.48.195.126  255.255.255.254  COST: 1000000
++IP-Extended  185.140.150.74  255.255.255.254  COST: 1000000
+ Router ID    212.48.195.102
+ Router Cap   212.48.195.102   D: 0  S: 0
+
+0811.1711.3132.00-00   0x00009e60 0xd7f2     347            1033     0/0/0
+ SOURCE       SRGT-CR4-A.00
+ HOST NAME    SRGT-CR4-A
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ NLPID        IPV6
+ AREA ADDR    49.0001
+ INTF ADDR    81.177.113.132
+ INTF ADDR    188.128.126.196
+ INTF ADDR    188.254.25.71
+ INTF ADDR    188.128.126.192
+ INTF ADDR    188.128.126.182
+ INTF ADDR    213.59.209.18
+ INTF ADDR    188.128.126.188
+ INTF ADDR    188.128.126.142
+ INTF ADDR    188.128.126.96
+ INTF ADDR    188.128.126.176
+ INTF ADDR    188.128.126.172
+ Topology     Standard
++NBR  ID      SRGT-CR4-B.00  COST: 20000
++NBR  ID      BJAR-RGR2.00  COST: 70000
++NBR  ID      STRZ-RGR2.00  COST: 70000
++NBR  ID      SRGT-RGR11.00  COST: 70000
++NBR  ID      NBSK-RGR11.00  COST: 70000
++NBR  ID      NBSK-RGR2.00  COST: 70000
++NBR  ID      TMEN-RGR11.00  COST: 70000
++NBR  ID      TMEN-RGR2.00  COST: 70000
++NBR  ID      KHMS-RGR11.00  COST: 70000
++NBR  ID      UAK8-CR4-A.00  COST: 160
++IP-Extended  81.177.113.132  255.255.255.255  COST: 0
++IP-Extended  188.128.126.196 255.255.255.254  COST: 20000
++IP-Extended  188.254.25.70   255.255.255.254  COST: 160
++IP-Extended  188.128.126.192 255.255.255.254  COST: 70000
++IP-Extended  188.128.126.182 255.255.255.254  COST: 70000
++IP-Extended  213.59.209.18   255.255.255.254  COST: 70000
++IP-Extended  188.128.126.188 255.255.255.254  COST: 70000
++IP-Extended  188.128.126.142 255.255.255.254  COST: 70000
++IP-Extended  188.128.126.96  255.255.255.254  COST: 70000
++IP-Extended  188.128.126.176 255.255.255.254  COST: 70000
++IP-Extended  188.128.126.172 255.255.255.254  COST: 70000
+ Router ID    81.177.113.132
+
+0811.1711.3133.00-00   0x0000a97d 0x4154     1001           1126     0/0/0
+ SOURCE       SRGT-CR4-B.00
+ HOST NAME    SRGT-CR4-B
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ NLPID        IPV6
+ AREA ADDR    49.0001
+ INTF ADDR    81.177.113.133
+ INTF ADDR    188.128.126.197
+ INTF ADDR    188.128.126.194
+ INTF ADDR    188.128.126.184
+ INTF ADDR    87.226.133.212
+ INTF ADDR    188.128.126.186
+ INTF ADDR    188.128.126.174
+ INTF ADDR    188.128.126.190
+ INTF ADDR    188.128.126.98
+ INTF ADDR    188.128.126.178
+ INTF ADDR    213.59.209.11
+ INTF ADDR    188.128.126.87
+ Topology     Standard
++NBR  ID      SRGT-CR4-A.00  COST: 20000
++NBR  ID      STRZ-RGR2.00  COST: 70000
++NBR  ID      BJAR-RGR2.00  COST: 70000
++NBR  ID      NBSK-RGR11.00  COST: 70000
++NBR  ID      NBSK-RGR2.00  COST: 70000
++NBR  ID      TMEN-RGR2.00  COST: 70000
++NBR  ID      TMEN-RGR11.00  COST: 70000
++NBR  ID      UAK8-CR4-B.00  COST: 160
++NBR  ID      SRGT-RGR11.00  COST: 70000
++NBR  ID      KHMS-RGR11.00  COST: 70000
++NBR  ID      UAK8-CR4-B.00  COST: 160
++IP-Extended  81.177.113.133  255.255.255.255  COST: 0
++IP-Extended  188.128.126.196 255.255.255.254  COST: 20000
++IP-Extended  188.128.126.194 255.255.255.254  COST: 70000
++IP-Extended  188.128.126.184 255.255.255.254  COST: 70000
++IP-Extended  87.226.133.212  255.255.255.254  COST: 70000
++IP-Extended  188.128.126.186 255.255.255.254  COST: 70000
++IP-Extended  188.128.126.174 255.255.255.254  COST: 70000
++IP-Extended  188.128.126.190 255.255.255.254  COST: 70000
++IP-Extended  188.128.126.98  255.255.255.254  COST: 70000
++IP-Extended  188.128.126.178 255.255.255.254  COST: 70000
++IP-Extended  213.59.209.10   255.255.255.254  COST: 160
++IP-Extended  188.128.126.86  255.255.255.254  COST: 160
+ Router ID    81.177.113.133
+
+0811.7711.3000.00-00   0x0003d346 0x6713     797            439      0/0/0
+ SOURCE       YOSH-RGR11.00
+ HOST NAME    YOSH-RGR11
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ NLPID        IPV6
+ AREA ADDR    49.0001
+ INTF ADDR    81.177.113.0
++NBR  ID      NNOV-CR4-A.00  COST: 70000
++NBR  ID      YOSH-RGR12.00  COST: 10000
++NBR  ID      SMRA-CR5-B.00  COST: 70000
++IP-Extended  81.177.113.0    255.255.255.255  COST: 0
++IP-Extended  81.177.113.1    255.255.255.255  COST: 10000
++IP-Extended  81.177.113.3    255.255.255.255  COST: 70000
++IP-Extended  213.59.207.229  255.255.255.255  COST: 10000
++IP-Extended  81.177.113.4    255.255.255.255  COST: 10000
++IP-Extended  213.59.207.230  255.255.255.255  COST: 10000
++IP-Extended  81.177.113.2    255.255.255.255  COST: 70000
+ Router ID    81.177.113.0
+ IPV6         2A00:1E88:F:F::/128              COST: 0
+ Router Cap   81.177.113.0     D: 0  S: 0
+
+0811.7711.3001.00-00   0x00016478 0x515c     582            439      0/0/0
+ SOURCE       YOSH-RGR12.00
+ HOST NAME    YOSH-RGR12
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ NLPID        IPV6
+ AREA ADDR    49.0001
+ INTF ADDR    81.177.113.1
++NBR  ID      NNOV-CR4-B.00  COST: 70000
++NBR  ID      SMRA-CR5-A.00  COST: 70000
++NBR  ID      YOSH-RGR11.00  COST: 10000
++IP-Extended  81.177.113.1    255.255.255.255  COST: 0
++IP-Extended  81.177.113.3    255.255.255.255  COST: 70000
++IP-Extended  213.59.207.229  255.255.255.255  COST: 10000
++IP-Extended  81.177.113.0    255.255.255.255  COST: 10000
++IP-Extended  81.177.113.4    255.255.255.255  COST: 20000
++IP-Extended  213.59.207.230  255.255.255.255  COST: 10000
++IP-Extended  81.177.113.2    255.255.255.255  COST: 70000
+ Router ID    81.177.113.1
+ IPV6         2A00:1E88:F:F::1/128             COST: 0
+ Router Cap   81.177.113.1     D: 0  S: 0
+
+0811.7711.3006.00-00   0x0003e184 0x3c15     826            430      0/0/0
+ SOURCE       ULSK-RGR11.00
+ HOST NAME    ULSK-RGR11
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ NLPID        IPV6
+ AREA ADDR    49.0001
+ INTF ADDR    81.177.113.6
++NBR  ID      NNOV-CR4-A.00  COST: 70000
++NBR  ID      SMRA-CR5-B.00  COST: 70000
++NBR  ID      ULSK-RGR12.00  COST: 10000
++IP-Extended  81.177.113.6    255.255.255.255  COST: 0
++IP-Extended  81.177.113.9    255.255.255.255  COST: 10000
++IP-Extended  81.177.113.8    255.255.255.255  COST: 10000
++IP-Extended  81.177.113.7    255.255.255.255  COST: 10000
++IP-Extended  81.177.113.10   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.11   255.255.255.255  COST: 10000
+ Router ID    81.177.113.6
+ IPV6         2A00:1E88:F:F::6/128             COST: 0
+ Router Cap   81.177.113.6     D: 0  S: 0
+
+0811.7711.3007.00-00   0x0003c929 0xbbb0     848            430      0/0/0
+ SOURCE       ULSK-RGR12.00
+ HOST NAME    ULSK-RGR12
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ NLPID        IPV6
+ AREA ADDR    49.0001
+ INTF ADDR    81.177.113.7
++NBR  ID      NNOV-CR4-B.00  COST: 70000
++NBR  ID      ULSK-RGR11.00  COST: 10000
++NBR  ID      SMRA-CR5-A.00  COST: 70000
++IP-Extended  81.177.113.7    255.255.255.255  COST: 0
++IP-Extended  81.177.113.8    255.255.255.255  COST: 10000
++IP-Extended  81.177.113.9    255.255.255.255  COST: 10000
++IP-Extended  81.177.113.6    255.255.255.255  COST: 10000
++IP-Extended  81.177.113.10   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.11   255.255.255.255  COST: 10000
+ Router ID    81.177.113.7
+ IPV6         2A00:1E88:F:F::7/128             COST: 0
+ Router Cap   81.177.113.7     D: 0  S: 0
+
+0811.7711.3012.00-00   0x0003aec9 0xdabd     1034           463      0/0/0
+ SOURCE       KIRV-RGR11.00
+ HOST NAME    KIRV-RGR11
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ NLPID        IPV6
+ AREA ADDR    49.0001
+ INTF ADDR    81.177.113.12
++NBR  ID      NNOV-CR4-A.00  COST: 70000
++NBR  ID      KIRV-RGR12.00  COST: 10000
++NBR  ID      KIRV-BPE3.00  COST: 10000
++NBR  ID      SMRA-CR5-B.00  COST: 70000
++IP-Extended  81.177.113.12   255.255.255.255  COST: 0
++IP-Extended  81.177.113.16   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.15   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.17   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.14   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.13   255.255.255.255  COST: 10000
+ Router ID    81.177.113.12
+ IPV6         2A00:1E88:F:F::C/128             COST: 0
+ Router Cap   81.177.113.12    D: 0  S: 0
+
+0811.7711.3013.00-00   0x0003a947 0xfc01     769            463      0/0/0
+ SOURCE       KIRV-RGR12.00
+ HOST NAME    KIRV-RGR12
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ NLPID        IPV6
+ AREA ADDR    49.0001
+ INTF ADDR    81.177.113.13
++NBR  ID      NNOV-CR4-B.00  COST: 70000
++NBR  ID      KIRV-RGR11.00  COST: 10000
++NBR  ID      KIRV-BPE3.00  COST: 10010
++NBR  ID      SMRA-CR5-A.00  COST: 70000
++IP-Extended  81.177.113.13   255.255.255.255  COST: 0
++IP-Extended  81.177.113.15   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.12   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.14   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.16   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.17   255.255.255.255  COST: 10000
+ Router ID    81.177.113.13
+ IPV6         2A00:1E88:F:F::D/128             COST: 0
+ Router Cap   81.177.113.13    D: 0  S: 0
+
+0811.7711.3018.00-00   0x0003be67 0x83b9     937            430      0/0/0
+ SOURCE       CHEB-RGR11.00
+ HOST NAME    CHEB-RGR11
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ NLPID        IPV6
+ AREA ADDR    49.0001
+ INTF ADDR    81.177.113.18
++NBR  ID      NNOV-CR4-A.00  COST: 70000
++NBR  ID      CHEB-RGR12.00  COST: 10000
++NBR  ID      SMRA-CR5-B.00  COST: 70000
++IP-Extended  81.177.113.18   255.255.255.255  COST: 0
++IP-Extended  81.177.113.138  255.255.255.255  COST: 10000
++IP-Extended  81.177.113.139  255.255.255.255  COST: 10000
++IP-Extended  81.177.113.21   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.19   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.20   255.255.255.255  COST: 10000
+ Router ID    81.177.113.18
+ IPV6         2A00:1E88:F:F::12/128            COST: 0
+ Router Cap   81.177.113.18    D: 0  S: 0
+
+0811.7711.3019.00-00   0x0003a4a3 0xb361     709            430      0/0/0
+ SOURCE       CHEB-RGR12.00
+ HOST NAME    CHEB-RGR12
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ NLPID        IPV6
+ AREA ADDR    49.0001
+ INTF ADDR    81.177.113.19
++NBR  ID      NNOV-CR4-B.00  COST: 70000
++NBR  ID      CHEB-RGR11.00  COST: 10000
++NBR  ID      SMRA-CR5-A.00  COST: 70000
++IP-Extended  81.177.113.19   255.255.255.255  COST: 0
++IP-Extended  81.177.113.18   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.21   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.138  255.255.255.255  COST: 10000
++IP-Extended  81.177.113.139  255.255.255.255  COST: 10000
++IP-Extended  81.177.113.20   255.255.255.255  COST: 10000
+ Router ID    81.177.113.19
+ IPV6         2A00:1E88:F:F::13/128            COST: 0
+ Router Cap   81.177.113.19    D: 0  S: 0
+
+0811.7711.3024.00-00   0x0000bf88 0x5cc2     807            439      0/0/0
+ SOURCE       SRSK-RGR11.00
+ HOST NAME    SRSK-RGR11
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ NLPID        IPV6
+ AREA ADDR    49.0001
+ INTF ADDR    81.177.113.24
++NBR  ID      NNOV-CR4-A.00  COST: 70000
++NBR  ID      SRSK-RGR12.00  COST: 10000
++NBR  ID      MKSH-CR4-B.00  COST: 70000
++IP-Extended  81.177.113.24   255.255.255.255  COST: 0
++IP-Extended  81.177.113.27   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.137  255.255.255.255  COST: 10000
++IP-Extended  81.177.113.136  255.255.255.255  COST: 10000
++IP-Extended  81.177.113.26   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.25   255.255.255.255  COST: 10000
++IP-Extended  188.128.104.58  255.255.255.255  COST: 10000
+ Router ID    81.177.113.24
+ IPV6         2A00:1E88:F:F::18/128            COST: 0
+ Router Cap   81.177.113.24    D: 0  S: 0
+
+0811.7711.3025.00-00   0x00039014 0xbd05     936            439      0/0/0
+ SOURCE       SRSK-RGR12.00
+ HOST NAME    SRSK-RGR12
+Auth: *****     Len: 16     Type: MD5
+ NLPID        IPV4
+ NLPID        IPV6
+ AREA ADDR    49.0001
+ INTF ADDR    81.177.113.25
++NBR  ID      SRSK-RGR11.00  COST: 10000
++NBR  ID      MKSH-CR4-A.00  COST: 70000
++NBR  ID      NNOV-CR4-B.00  COST: 70000
++IP-Extended  81.177.113.25   255.255.255.255  COST: 0
++IP-Extended  81.177.113.24   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.26   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.27   255.255.255.255  COST: 10000
++IP-Extended  81.177.113.137  255.255.255.255  COST: 10000
++IP-Extended  81.177.113.136  255.255.255.255  COST: 10000
++IP-Extended  188.128.104.58  255.255.255.255  COST: 10000
+ Router ID    81.177.113.25
+ IPV6         2A00:1E88:F:F::19/128            COST: 0

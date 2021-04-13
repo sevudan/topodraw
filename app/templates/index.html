@@ -1,0 +1,55 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IGP Topology</title>
+    <!-- NeXt library -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='nextUI/bower_components/next-bower/css/next.min.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='nextUI/bower_components/next-bower/js/next.min.js') }}"></script>
+</head>
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 12px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #4CAF50;
+position: relative;
+top: 10em;
+left: 30em;
+} /* Green */
+</style>
+<body>
+<div id="topology-container"></div>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+  <form action="" method="post">
+   <p>
+       <label for="host">Host</label>
+	   <input type="text" name="host">
+	   <label for="username">Username</label>
+	   <input type="text" name="username">
+	   <label for="password">Password</label>
+	   <input type="password" name="password">
+       <label for="igp">IGP</label>
+       <select name="igp">
+            <option value="ospf">OSPF</option>
+            <option value="isis">ISIS</option>
+       </select>
+       <button type="submit" >Scan</button>
+   </p>
+  </form>
+<!-- Application scripts -->
+<script type="text/javascript" src="{{ url_for('static', filename='nextUI/app/topology_data.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='nextUI/app/topology.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='nextUI/app/main.js') }}"></script>
+</body>
+</html>
